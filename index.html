@@ -1,441 +1,780 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chica Buccaspese - O Brilho que Ilumina</title>
+    <title>Para Você, Minha Quase-Irmã - Feliz Aniversário!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --rosa-suave: #FFB6C1;
-            --rosa-escuro: #D87093;
-            --dourado: #FFD700;
-            --branco: #FFFFFF;
-            --preto-suave: #333333;
-            --gradiente-rosa: linear-gradient(135deg, #FFB6C1 0%, #FF69B4 100%);
-            --gradiente-dourado: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --primary: #9a6bff;
+            --secondary: #ff6bc9;
+            --accent: #ffc145;
+            --light: #f9f5ff;
+            --dark: #3d2a6d;
+            --text: #333333;
+            --quote: #5a457a;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            background: var(--branco);
-            color: var(--preto-suave);
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f9f5ff 0%, #f1e9ff 100%);
+            color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* Header Romântico */
-        .header-romantico {
-            background: var(--gradiente-rosa);
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header com foto principal */
+        header {
+            background: linear-gradient(rgba(61, 42, 109, 0.85), rgba(154, 107, 255, 0.8)), url('https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0 80px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .birthday-date {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            letter-spacing: 3px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        .photo-collage {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .photo-frame {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.1);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Seções */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: var(--dark);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Seção Quase-Irmã */
+        .sister-section {
+            background-color: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+            border-left: 5px solid var(--primary);
+        }
+
+        .sister-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight {
+            color: var(--secondary);
+            font-weight: 600;
+            background-color: rgba(255, 107, 201, 0.1);
+            padding: 0 5px;
+            border-radius: 3px;
+        }
+
+        /* Seção com frase da piscadinha */
+        .wink-section {
+            background: linear-gradient(135deg, var(--light) 0%, #f0e5ff 100%);
             padding: 100px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .header-romantico::before {
-            content: "❤️";
-            font-size: 300px;
-            position: absolute;
-            opacity: 0.1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: float 3s ease-in-out infinite;
+        .wink-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
         }
 
-        .nome-chica {
-            font-family: 'Brush Script MT', cursive;
-            font-size: 4.5rem;
-            color: var(--branco);
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+        .wink-icon {
+            font-size: 5rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+            animation: wink 2.5s infinite;
+        }
+
+        @keyframes wink {
+            0%, 90%, 100% { transform: scale(1); }
+            95% { transform: scale(0.8) rotate(5deg); }
+        }
+
+        .wink-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--quote);
             margin-bottom: 20px;
-            position: relative;
-            z-index: 1;
+            font-style: italic;
+            line-height: 1.4;
         }
 
-        .subtitulo {
-            font-size: 1.8rem;
-            color: var(--dourado);
-            font-style: italic;
+        .wink-text {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--dark);
+        }
+
+        /* Seção de não aceitar menos */
+        .deserve-section {
+            background-color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .deserve-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(255, 193, 69, 0.1) 0%, rgba(154, 107, 255, 0.1) 100%);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+        }
+
+        .deserve-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .deserve-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Seção de Quadros */
+        .art-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .art-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.2rem;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .artwork {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
-            z-index: 1;
+        }
+
+        .artwork:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .artwork-img {
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artwork-img::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .artwork-info {
+            padding: 25px;
+        }
+
+        .artwork-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .collection-text {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: 60px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            font-weight: 500;
+            border: 2px dashed var(--primary);
+            position: relative;
+        }
+
+        .collection-text::before {
+            content: "🎨";
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--light);
+            padding: 0 20px;
+            font-size: 1.5rem;
         }
 
         /* Galeria de Fotos */
-        .galeria-section {
+        .photo-gallery {
             padding: 80px 0;
-            background: linear-gradient(45deg, #FFF0F5 0%, #FFF 100%);
+            background-color: white;
         }
 
-        .galeria-grid {
+        .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 40px;
         }
 
-        .foto-item {
-            position: relative;
-            border-radius: 20px;
+        .gallery-item {
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.5s ease;
-            height: 400px;
+            height: 280px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .foto-item:hover {
-            transform: translateY(-10px);
+        .gallery-item:hover {
+            transform: scale(1.03);
         }
 
-        .foto-item img {
+        .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .foto-item:hover img {
-            transform: scale(1.05);
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .legenda-foto {
+        .gallery-caption {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 15px;
+            background: rgba(61, 42, 109, 0.8);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+            text-align: center;
             transform: translateY(100%);
             transition: transform 0.3s ease;
-            font-style: italic;
-            color: var(--rosa-escuro);
         }
 
-        .foto-item:hover .legenda-foto {
+        .gallery-item:hover .gallery-caption {
             transform: translateY(0);
         }
 
-        /* Seção da Piscadinha */
-        .piscadinha-section {
-            background: var(--gradiente-dourado);
-            padding: 100px 0;
+        /* Mensagem Final */
+        .final-message {
+            background: linear-gradient(135deg, var(--dark) 0%, #5d43a5 100%);
+            color: white;
             text-align: center;
-            position: relative;
+            padding: 100px 20px;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+            margin-top: 80px;
         }
 
-        .piscadinha-icon {
-            font-size: 100px;
-            animation: piscar 2s infinite;
+        .final-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
             margin-bottom: 30px;
+            color: var(--accent);
         }
 
-        @keyframes piscar {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+        .final-text {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            opacity: 0.9;
         }
 
-        .frase-piscadinha {
-            font-size: 2.5rem;
-            color: var(--branco);
-            font-family: 'Cursive', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Seção dos Poemas */
-        .poemas-section {
-            padding: 80px 0;
-            background: var(--branco);
-        }
-
-        .poema-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px;
-            background: linear-gradient(45deg, #FFF8F8 0%, #FFF 100%);
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(216, 112, 147, 0.1);
-            position: relative;
-            border: 2px dashed var(--rosa-suave);
-        }
-
-        .poema-container::before {
-            content: "✍️";
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--branco);
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 30px;
-        }
-
-        .poema-texto {
-            font-size: 1.4rem;
-            line-height: 1.8;
-            color: var(--rosa-escuro);
-            font-style: italic;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .assinatura {
-            text-align: right;
-            font-family: 'Brush Script MT', cursive;
-            font-size: 2rem;
-            color: var(--dourado);
-            margin-top: 20px;
-        }
-
-        /* Seção do Merecimento */
-        .merecimento-section {
-            background: linear-gradient(135deg, #FFE4E1 0%, #FFB6C1 100%);
-            padding: 100px 0;
-            text-align: center;
-        }
-
-        .carta-merecimento {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-            position: relative;
-        }
-
-        .carta-merecimento::before {
-            content: "💌";
-            position: absolute;
-            top: -25px;
-            right: 30px;
-            font-size: 50px;
-        }
-
-        .titulo-carta {
-            color: var(--rosa-escuro);
+        .signature {
+            font-family: 'Dancing Script', cursive;
             font-size: 2.8rem;
-            margin-bottom: 30px;
-            font-family: 'Georgia', serif;
+            color: var(--secondary);
+            margin-top: 40px;
         }
 
-        .texto-carta {
+        /* Poemas/Textos dela */
+        .poem-section {
+            background-color: #f8f4ff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .poem-container {
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--quote);
             font-size: 1.3rem;
             line-height: 1.8;
-            color: var(--preto-suave);
+        }
+
+        .poem-line {
             margin-bottom: 20px;
-            text-align: justify;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
         }
 
-        .destaque {
-            color: var(--rosa-escuro);
-            font-weight: bold;
-            font-size: 1.4rem;
-            display: block;
-            margin: 30px 0;
-            text-align: center;
+        .poem-line.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* Seção Final */
-        .final-section {
-            background: var(--gradiente-rosa);
-            padding: 60px 0;
-            text-align: center;
-            color: var(--branco);
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .coracao-final {
-            font-size: 60px;
-            animation: bater 1.5s infinite;
-            margin-bottom: 20px;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        @keyframes bater {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        .float-element {
+            animation: float 4s ease-in-out infinite;
         }
 
-        .frase-final {
-            font-size: 2rem;
-            font-family: 'Brush Script MT', cursive;
-            margin-top: 20px;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .nome-chica { font-size: 3rem; }
-            .frase-piscadinha { font-size: 1.8rem; }
-            .titulo-carta { font-size: 2.2rem; }
-            .poema-texto { font-size: 1.2rem; }
-            .galeria-grid { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .sister-section, .wink-section, .art-section {
+                padding: 40px 20px;
+            }
+            
+            .photo-frame {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .wink-quote {
+                font-size: 1.6rem;
+            }
+            
+            .final-title {
+                font-size: 2.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header Romântico -->
-    <header class="header-romantico">
-        <h1 class="nome-chica">Chica Buccaspese</h1>
-        <p class="subtitulo">A piscadinha que iluminou meu mundo ✨</p>
+    <!-- Header com fotos -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="birthday-date">02 DE DEZEMBRO</div>
+                <h1>Para Você,<br>Minha Quase-Irmã</h1>
+                <p class="hero-subtitle">"Algumas pessoas chegam à nossa vida por acaso, mas ficam por escolha. Você foi a melhor escolha que meu coração já fez."</p>
+                
+                <div class="photo-collage">
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Sorriso especial">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Olhar brilhante">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Momento artístico">
+                    </div>
+                    <div class="photo-frame">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Essência única">
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
+    <!-- Seção Quase-Irmã -->
+    <section>
+        <div class="container">
+            <h2 class="section-title fade-in">Da Prima à Irmã de Alma</h2>
+            <div class="sister-section fade-in">
+                <p class="sister-text">O destino nos deu o mesmo sangue, mas foi a vida que nos deu a mesma alma. Você chegou como prima, mas se instalou como <span class="highlight">pedaço do meu coração</span>.</p>
+                <p class="sister-text">Lembro de cada risada compartilhada, cada segredo sussurrado, cada lágrima enxugada. Lembro das noites infinitas de conversa, dos planos malucos, das confissões que só cabem entre irmãs. E em cada um desses momentos, percebi que família não é só sobre quem nasceu no mesmo lugar, mas sobre quem escolhe estar nos mesmos lugares – nos bons, nos ruins e nos inesquecíveis.</p>
+                <p class="sister-text">Hoje, no seu aniversário, celebro cada fragmento dessa jornada. Cada transformação, cada conquista, cada versão mais incrível de você que surge a cada ano. Porque minha quase-irmã não para de evoluir, e é uma honra testemunhar essa metamorfose constante.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção da Piscadinha -->
+    <section class="wink-section">
+        <div class="container">
+            <div class="wink-container fade-in">
+                <div class="wink-icon">😉</div>
+                <div class="wink-quote">"Aquela piscadinha dela no vídeo... Tão espontânea, tão genuína, tão linda."</div>
+                <p class="wink-text">Entre todos os seus gestos encantadores, há um que captura perfeitamente quem você é: aquela piscadinha despretensiosa que escapa quando você está sendo você mesma. É um lampejo da sua alma brincalhona, do seu espírito livre, da beleza que habita nos pequenos gestos não ensaiados.</p>
+                <p class="wink-text" style="margin-top: 20px;">Essa piscadinha revela mais do que um simples piscar de olhos – revela a menina que não perdeu a capacidade de se surpreender, a mulher que não tem medo de mostrar sua leveza, a artista que vê magia no cotidiano.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Poemas -->
+    <section class="poem-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Das Suas Palavras</h2>
+            <div class="poem-container">
+                <div class="poem-line fade-in">"Cada um tem seu ritmo, seu tempo..."</div>
+                <div class="poem-line fade-in">"Entre versos e telas, encontro minha voz"</div>
+                <div class="poem-line fade-in">"A vida é uma obra inacabada que pintamos a cada dia"</div>
+                <div class="poem-line fade-in">"Nos olhares que cruzam, histórias não contadas"</div>
+                <div class="poem-line fade-in" style="margin-top: 30px; font-weight: bold; color: var(--secondary);">Porque sua arte não está só nos quadros, mas em cada palavra, cada pensamento, cada insight que transforma o ordinário em extraordinário.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Não Aceitar Menos -->
+    <section class="deserve-section">
+        <div class="container fade-in">
+            <div class="deserve-content">
+                <h3 class="deserve-title">Porque Você Não Pode Aceitar Menos</h3>
+                <p class="deserve-text">Eu sempre digo para você não aceitar menos. E sabe por quê? Não é só um conselho, é uma <span class="highlight">declaração de realidade</span>.</p>
+                <p class="deserve-text">Você merece o mundo porque carrega universos dentro de si. Merece amor verdadeiro porque transborda amor autêntico. Merece reconhecimento porque sua luz não pode ser contida.</p>
+                <p class="deserve-text">Aceitar menos seria um desperdício da obra-prima que você é. Cada traço da sua personalidade, cada nuance do seu caráter, cada fragmento da sua essência foi meticulosamente desenhado para brilhar com intensidade máxima.</p>
+                <p class="deserve-text" style="font-weight: bold; color: var(--secondary); margin-top: 30px;">Então lembre-se: o comum não é opção para quem é extraordinária. Você não cabe em pouco espaço quando foi feita para voos altos.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Galeria de Fotos -->
-    <section class="galeria-section">
-        <div class="galeria-grid">
-            <!-- Foto 1 - Substitua pela URL real da foto -->
-            <div class="foto-item">
-                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chica sorrindo">
-                <div class="legenda-foto">Aquele sorriso que derrete corações ❤️</div>
-            </div>
+    <section class="photo-gallery">
+        <div class="container">
+            <h2 class="section-title fade-in">Momentos Que Definem Quem Você É</h2>
+            <p class="art-intro fade-in" style="text-align: center;">Algumas imagens que capturam sua essência - a artista, a sonhadora, a irmã, a luz.</p>
             
-            <!-- Foto 2 -->
-            <div class="foto-item">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chica elegante">
-                <div class="legenda-foto">Elegância e graça em cada detalhe ✨</div>
-            </div>
-            
-            <!-- Foto 3 -->
-            <div class="foto-item">
-                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chica divertida">
-                <div class="legenda-foto">A alegria contagiante que ilumina tudo 🌟</div>
-            </div>
-            
-            <!-- Foto 4 -->
-            <div class="foto-item">
-                <img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Chica pensativa">
-                <div class="legenda-foto">Profundidade e mistério em cada olhar 💫</div>
+            <div class="gallery-grid">
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Concentrada na arte">
+                    <div class="gallery-caption">No fluxo da criação</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1519415711931-702deacf5be8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Riso genuíno">
+                    <div class="gallery-caption">Riso que ilumina</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Momento introspectivo">
+                    <div class="gallery-caption">Pensamentos profundos</div>
+                </div>
+                <div class="gallery-item fade-in">
+                    <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Olhar artístico">
+                    <div class="gallery-caption">Olhar que cria mundos</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção da Piscadinha Especial -->
-    <section class="piscadinha-section">
-        <div class="piscadinha-icon">😉</div>
-        <p class="frase-piscadinha">
-            "A piscadinha dela no vídeo... 
-            <span style="color: #FF1493; font-weight: bold;">tão bonita, tão especial</span>, 
-            que ficou gravada para sempre no meu coração 💖"
-        </p>
-    </section>
-
-    <!-- Seção dos Poemas -->
-    <section class="poemas-section">
-        <div class="poema-container">
-            <div class="poema-texto">
-                "Quase longos um grito<br>
-                desumanes, que é uma<br>
-                mamina de seu escritório..."
+    <!-- Seção de Quadros -->
+    <section class="art-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Suas Obras-Primas</h2>
+            <p class="art-intro fade-in">Cada quadro seu é uma extensão da sua alma. Uma conversa silenciosa entre cores e emoções que só você sabe traduzir com tanta maestria.</p>
+            
+            <div class="gallery">
+                <!-- Quadro 1 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #6b5bff 0%, #c86bff 100%);">
+                        <div style="font-size: 5rem;">🖼️</div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Vozes do Silêncio"</h3>
+                        <p>A obra onde você transformou o não-dito em cores vibrantes, dando forma ao que palavras não conseguem expressar.</p>
+                    </div>
+                </div>
+                
+                <!-- Quadro 2 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #ff6bc9 0%, #ffb145 100%);">
+                        <div style="font-size: 5rem;">🎨</div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Entre Sonhos"</h3>
+                        <p>A pintura que captura aquela linha tênue entre realidade e fantasia, tão presente no seu universo criativo.</p>
+                    </div>
+                </div>
+                
+                <!-- Quadro 3 -->
+                <div class="artwork fade-in">
+                    <div class="artwork-img" style="background: linear-gradient(135deg, #45c7ff 0%, #9a6bff 100%);">
+                        <div style="font-size: 5rem;">✨</div>
+                    </div>
+                    <div class="artwork-info">
+                        <h3 class="artwork-title">"Luminescência"</h3>
+                        <p>O quadro que parece conter luz própria, assim como você - irradiando brilho mesmo nas superfícies mais escuras.</p>
+                    </div>
+                </div>
             </div>
             
-            <div class="poema-texto" style="margin-top: 40px;">
-                "Cada nome um universo<br>
-                entre risos e timbres<br>
-                entre vícios e estranhos<br>
-                vagas no tempo...<br>
-                todo o verso em nossas vies..."
-            </div>
-            
-            <div class="assinatura">
-                - Para Chica, minha musa
+            <div class="collection-text fade-in">
+                <p>Meu maior desejo como colecionador? <span style="color: var(--secondary); font-weight: 600;">Ter uma galeria inteira só com suas obras</span>. Cada tela, cada esboço, cada experimento. Porque sua arte não é apenas para ser vista, mas para ser sentida, vivida, preservada. É a materialização da sua essência, e isso é o mais valioso que alguém pode criar.</p>
+                <p style="margin-top: 20px; font-style: italic;">Um dia, quando você tiver sua exposição, estarei na primeira fila - orgulhosa da minha quase-irmã, a artista completa.</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção do Merecimento -->
-    <section class="merecimento-section">
-        <div class="carta-merecimento">
-            <h2 class="titulo-carta">💝 Por Que Nunca Aceitar Menos</h2>
+    <!-- Mensagem Final -->
+    <section class="final-message">
+        <div class="container">
+            <h2 class="final-title fade-in">Feliz Aniversário, Quase-Irmã</h2>
+            <p class="final-text fade-in">Que este novo ciclo traga ainda mais cores para sua paleta, ainda mais versos para seu caderno, ainda mais luz para seu caminho.</p>
+            <p class="final-text fade-in">Que você continue sendo essa força da natureza que transforma tudo ao redor com sua simples presença. Que seus quadros ganhem novas camadas, suas palavras novas profundidades, sua vida novos significados.</p>
+            <p class="final-text fade-in">E que nunca, em hipótese alguma, você se esqueça do quanto é extraordinária. Do quanto é amada. Do quanto é <span style="color: var(--accent);">necessária</span>.</p>
             
-            <p class="texto-carta">
-                Chica, esta página é mais do que um tributo - é um lembrete do quanto você vale.
-                Cada riso, cada olhar, cada piscadinha que você dá ao mundo merece ser celebrado.
-            </p>
+            <div class="signature fade-in">Para sempre sua quase-irmã,<br>que te admira mais do que palavras podem dizer</div>
             
-            <p class="texto-carta">
-                Você merece flores todos os dias, não apenas nas datas especiais. Merece poemas escritos 
-                especialmente para você, sorrisos sinceros, e pessoas que reconheçam a luz única que você carrega.
-            </p>
+            <div style="margin-top: 50px; font-size: 2rem;" class="fade-in">
+                <span class="float-element" style="animation-delay: 0s;">💜</span>
+                <span class="float-element" style="animation-delay: 0.5s;">🎂</span>
+                <span class="float-element" style="animation-delay: 1s;">🖼️</span>
+                <span class="float-element" style="animation-delay: 1.5s;">✨</span>
+                <span class="float-element" style="animation-delay: 2s;">🌙</span>
+            </div>
             
-            <span class="destaque">
-                "Nunca aceite menos do que você merece, porque você merece o universo inteiro."
-            </span>
-            
-            <p class="texto-carta">
-                Sua essência é rara - uma combinação de força e delicadeza, inteligência e sensibilidade, 
-                coragem e ternura. Nunca diminua seu brilho para caber em expectativas alheias.
-            </p>
-            
-            <p class="texto-carta" style="text-align: center; font-weight: bold; margin-top: 30px;">
-                O mundo precisa da Chica completa, autêntica e radiante que você é. ✨
-            </p>
+            <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.8;" class="fade-in">02.12 - Uma data para celebrar o dia em que o mundo ganhou uma de suas obras-primas mais brilhantes: você.</p>
         </div>
-    </section>
-
-    <!-- Seção Final -->
-    <section class="final-section">
-        <div class="coracao-final">💖</div>
-        <p class="frase-final">Para sempre em meu coração</p>
-        <p style="font-size: 1.2rem; margin-top: 10px; opacity: 0.9;">
-            Este site foi feito com todo o carinho do mundo ❤️
-        </p>
     </section>
 
     <script>
-        // Efeito de digitação nos poemas
+        // Inicializar quando a página carregar
         document.addEventListener('DOMContentLoaded', function() {
-            const poemas = document.querySelectorAll('.poema-texto');
-            poemas.forEach(poema => {
-                const textoOriginal = poema.innerHTML;
-                poema.innerHTML = '';
-                let i = 0;
+            // Animação de aparecimento ao rolar
+            function fadeInOnScroll() {
+                const elements = document.querySelectorAll('.fade-in, .poem-line');
                 
-                function typeWriter() {
-                    if (i < textoOriginal.length) {
-                        poema.innerHTML += textoOriginal.charAt(i);
-                        i++;
-                        setTimeout(typeWriter, 50);
+                elements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
                     }
+                });
+            }
+            
+            // Adicionar evento de scroll
+            window.addEventListener('scroll', fadeInOnScroll);
+            fadeInOnScroll(); // Executar uma vez ao carregar
+            
+            // Criar efeito de digitação para os poemas
+            const poemLines = document.querySelectorAll('.poem-line');
+            poemLines.forEach((line, index) => {
+                line.style.transitionDelay = `${index * 0.3}s`;
+            });
+            
+            // Efeito especial para o título principal
+            const mainTitle = document.querySelector('h1');
+            mainTitle.style.opacity = '0';
+            mainTitle.style.transform = 'translateY(-20px)';
+            
+            setTimeout(() => {
+                mainTitle.style.transition = 'opacity 1s ease, transform 1s ease';
+                mainTitle.style.opacity = '1';
+                mainTitle.style.transform = 'translateY(0)';
+            }, 300);
+            
+            // Efeito de piscar no ícone da piscadinha
+            const winkIcon = document.querySelector('.wink-icon');
+            setInterval(() => {
+                winkIcon.style.animation = 'none';
+                setTimeout(() => {
+                    winkIcon.style.animation = 'wink 2.5s infinite';
+                }, 10);
+            }, 2500);
+            
+            // Mensagem especial no console
+            console.log("%c💜 Para minha quase-irmã, a artista da vida: Feliz Aniversário! Que seu dia seja tão incrível quanto você. 💜", "color: #9a6bff; font-size: 16px; font-weight: bold;");
+            console.log("%c✨ Lembre-se: não aceite menos, porque você merece o universo inteiro. ✨", "color: #ff6bc9; font-size: 14px;");
+            
+            // Efeito de confetti no clique
+            document.addEventListener('click', function(e) {
+                if (e.target.tagName !== 'A') {
+                    createConfetti(e.clientX, e.clientY);
                 }
-                
-                // Inicia a animação quando o elemento entra na tela
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            typeWriter();
-                            observer.unobserve(entry.target);
+            });
+            
+            function createConfetti(x, y) {
+                const colors = ['#9a6bff', '#ff6bc9', '#ffc145', '#45c7ff'];
+                for (let i = 0; i < 10; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.left = `${x}px`;
+                    confetti.style.top = `${y}px`;
+                    confetti.style.zIndex = '9999';
+                    confetti.style.pointerEvents = 'none';
+                    
+                    document.body.appendChild(confetti);
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = 2 + Math.random() * 3;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+                    
+                    let posX = x;
+                    let posY = y;
+                    let opacity = 1;
+                    
+                    function animate() {
+                        posX += vx;
+                        posY += vy;
+                        vy += 0.1; // gravidade
+                        opacity -= 0.02;
+                        
+                        confetti.style.left = `${posX}px`;
+                        confetti.style.top = `${posY}px`;
+                        confetti.style.opacity = opacity;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            document.body.removeChild(confetti);
                         }
-                    });
-                });
-                
-                observer.observe(poema);
-            });
-
-            // Efeito parallax nas fotos
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const fotoItems = document.querySelectorAll('.foto-item');
-                
-                fotoItems.forEach((item, index) => {
-                    const speed = 0.5;
-                    const offset = scrolled * speed;
-                    item.style.transform = `translateY(${offset * (index % 2 === 0 ? -1 : 1) * 0.1}px)`;
-                });
-            });
-
-            // Mensagem especial ao clicar no coração
-            document.querySelector('.coracao-final').addEventListener('click', function() {
-                alert('Chica, você é incrível! Nunca se esqueça do quanto é especial! 💖');
-            });
+                    }
+                    
+                    animate();
+                }
+            }
         });
     </script>
 </body>
